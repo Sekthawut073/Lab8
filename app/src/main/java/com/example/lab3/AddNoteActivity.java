@@ -24,6 +24,7 @@ public class AddNoteActivity extends AppCompatActivity {
     TextView display;
     Button addCheck;
     TextView display1;
+    TextView display2;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -52,6 +53,7 @@ public class AddNoteActivity extends AppCompatActivity {
         display = findViewById(R.id.textView3);
         addCheck = findViewById(R.id.Check);
         display1 = findViewById(R.id.textView4);
+        display2 = findViewById(R.id.textView6);
         EditName = findViewById(R.id.editTextText3);
         ID = findViewById(R.id.editTextText4);
 
@@ -61,16 +63,22 @@ public class AddNoteActivity extends AppCompatActivity {
                 //get data from (EditText)
                 String strOfTitle = title.getText().toString();
                 String strOfContent = textContent.getText().toString();
-                String stOfDate = new Date().toString();
+                String strOfDate = new Date().toString();
+                String strOName = EditName.getText().toString();
+                String strOID = ID.getText().toString();
                 //set data to Text clas
                 TextNote note1 = new TextNote();
                 note1.setTitle(strOfTitle);
 
                 note1.setTextContent(strOfContent);
 
-                note1.createdDate = stOfDate;
+                note1.createdDate = strOfDate;
+                User user1 = new TextUser() ;
+                user1.setName(strOName);
+                user1.setID(strOID);
                 //show note on TextView
                 display.setText(note1.getSummary());
+                display2.setText(user1.getSummary());
             }
 
         });

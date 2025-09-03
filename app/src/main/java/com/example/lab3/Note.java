@@ -4,9 +4,13 @@ public abstract class Note {
     //Attribute
     public String title;
     public String createdDate;
+    protected User owner;
     //getter
     public String getTitle() {
         return title;
+    }
+    public User getOwner() {
+        return owner;
     }
     //setter
     public void setTitle(String newTitle) {
@@ -15,6 +19,9 @@ public abstract class Note {
     //getter
     public String getCreatedDate() {
         return createdDate;
+    }
+    public void setOwner(User owner) {
+        this.owner = owner;
     }
     //setter
 
