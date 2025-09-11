@@ -31,6 +31,7 @@ public abstract class Note {
 
     //Method
     abstract public String getSummary();
+
     //System.out.println (title=":"+textContent+"("+createdDate+")");
 }
 

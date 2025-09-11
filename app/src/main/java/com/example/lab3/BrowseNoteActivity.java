@@ -17,7 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class BrowseNoteActivity extends AppCompatActivity {
 
-    Button addsearch;
+    Button addsearch,back2;
     ProgressBar progressBar2;
     TextView display3;
     EditText editTextText5;;
@@ -33,6 +33,14 @@ public class BrowseNoteActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+        back2 = findViewById(R.id.button3);//event source
+        back2.setOnClickListener(new View.OnClickListener() {//event Listener
+            @Override
+            public void onClick(View v) {//event handler
+                Intent addBack = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(addBack);
+            }
         });
         addsearch = findViewById(R.id.addsearch);
         progressBar2 =findViewById(R.id.progressBar2);
